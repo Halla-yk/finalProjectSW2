@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +9,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerHomePageController">
-    <stylesheets>
-        <URL value="@customerhomepage.css"/>
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="back" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerHomePageController">
+   <children>
+      <VBox layoutX="193.0" layoutY="48.0" prefHeight="291.0" prefWidth="284.0">
+         <children>
+            <Label prefHeight="36.0" prefWidth="247.0" text="Customer Page">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="GoShoppingScreen" contentDisplay="CENTER" mnemonicParsing="false" onAction="#GoShoppingScreenHandle" prefHeight="47.0" prefWidth="190.0" text="Go to Shopping Screen" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="GoProductPage" mnemonicParsing="false" onAction="#GoProductPageHandle" prefHeight="52.0" prefWidth="191.0" text="Go to Product Page">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="GoCartPage" mnemonicParsing="false" onAction="#GoCartPageHandle" prefHeight="45.0" prefWidth="196.0" text="Go to Cart Page">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
