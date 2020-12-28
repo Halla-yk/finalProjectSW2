@@ -5,10 +5,28 @@
  */
 package models;
 
+import java.sql.Statement;
+
 /**
  *
  * @author hala
  */
 public class OrderModel implements Model{
+    private int id;
+    private String shippingDate;
+    private String dateOfOrder;
+    private String dateOfArrive;
+    private int customerId;
+      private Statement aStatement;
+    DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
+    public OrderModel() {
+        
+    }
     
+    public void makeOrder(int id,String shippingDate,String dateOfOrder,int customerId)throws Exception {
+        String sql = "Insert Into customerorder values(" + id + ",'" +shippingDate + "','" 
+                +dateOfOrder+  ",'" +dateOfArrive + "',"+customerId+" )";
+        this.aStatement.executeUpdate(sql);
+    
+    }
 }

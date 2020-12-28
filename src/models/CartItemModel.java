@@ -10,5 +10,27 @@ package models;
  * @author hala
  */
 public class CartItemModel implements Model{
+    private int quantity;
+    private int pid ;
+
+    public CartItemModel() {
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public ProductModel getP() {
+        return p;
+    }
+
+    public void setP(ProductModel p) {
+        this.p = p;
+    }
+     
     
 }

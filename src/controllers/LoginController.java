@@ -6,6 +6,8 @@
 package controllers;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,14 +43,14 @@ public class LoginController extends Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      cm  =  (CustomerModel) super.ff.getModel("customer");
+    cm  =  (CustomerModel) super.ff.getModel("customer");
       sm = (StoreManagerModel) super.ff.getModel("store manager");
-        // TODO
     }    
 
     @FXML
     private void adminloginHandle(ActionEvent event) throws Exception{
-      sm.authentication(this.idTxt.getText(),this.passordTx.getText());  
+      
+    sm.authentication(this.idTxt.getText(),this.passordTx.getText());  
     }
 
     @FXML
