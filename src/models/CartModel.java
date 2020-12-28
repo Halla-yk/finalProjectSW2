@@ -13,6 +13,7 @@ import java.util.ArrayList;
  *
  * @author hala
  */
+/*
 public class CartModel implements Model{
     private int totalPrice;
     ArrayList<CartItemModel> c = new ArrayList<CartItemModel>();
@@ -41,5 +42,6 @@ public class CartModel implements Model{
             logFile(counter+"",bb);
         }
     }
-     
+    
 }
+*/

@@ -5,10 +5,13 @@
  */
 package models;
 
+import java.sql.ResultSet;
+import models.OrderModel;
+
 /**
  *
  * @author hala
  */
 public interface Strategy {
-public void getOrder(int data);    
+public ResultSet getOrder(int data);    
 }

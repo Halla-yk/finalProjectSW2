@@ -18,6 +18,21 @@
                   <TableColumn fx:id="tcSalary" prefWidth="274.0" text="Salary" />
               </columns>
             </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Enter your ID" textFill="#fffaf9">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="74.0" prefWidth="214.0">
+                     <children>
+                        <TextField fx:id="IdText" prefHeight="25.0" prefWidth="196.0" />
+                        <Button fx:id="showButton" mnemonicParsing="false" onAction="#showButtonHandle" text="show" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
          <padding>
             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
