@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShoppingScreenController">
-    
-</AnchorPane>
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="600.0" style="-fx-background-color: #900C3F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShoppingScreenController">
+   <children>
+      <VBox prefHeight="528.0" prefWidth="601.0">
+         <children>
+            <TableView fx:id="tableView" prefHeight="420.0" prefWidth="300.0">
+              <columns>
+                <TableColumn fx:id="tcOrderDate" prefWidth="266.0" text="Order Date" />
+                  <TableColumn fx:id="tcSalary" prefWidth="274.0" text="Salary" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</FlowPane>

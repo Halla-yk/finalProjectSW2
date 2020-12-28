@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author hala
  */
-public class CartScreenController implements Initializable {
+public class CartScreenController  extends Controller implements Initializable{
 
     /**
      * Initializes the controller class.
