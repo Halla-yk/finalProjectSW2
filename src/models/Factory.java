@@ -10,7 +10,7 @@ package models;
  * @author hala
  */
 public class Factory {
-     public Model getStudent(String type){
+     public Model getModel(String type){
         if(type.equalsIgnoreCase("customer"))
             return new CustomerModel();
         else if(type.equalsIgnoreCase("store manager"))

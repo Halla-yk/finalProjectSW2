@@ -14,13 +14,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import models.CustomerModel;
+import models.StoreManagerModel;
 
 /**
  * FXML Controller class
  *
  * @author hala
  */
-public class LoginController implements Initializable {
+public class LoginController extends Controller implements Initializable {
 
     @FXML
     private TextField idTxt;
@@ -32,17 +34,21 @@ public class LoginController implements Initializable {
     private Button adminloginButton;
     @FXML
     private Button customerloginButton;
-
+    CustomerModel cm ;
+    StoreManagerModel sm;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+      cm  =  (CustomerModel) super.ff.getModel("customer");
+      sm = (StoreManagerModel) super.ff.getModel("store manager");
         // TODO
     }    
 
     @FXML
-    private void adminloginHandle(ActionEvent event) {
+    private void adminloginHandle(ActionEvent event) throws Exception{
+      sm.authentication(this.idTxt.getText(),this.passordTx.getText());  
     }
 
     @FXML

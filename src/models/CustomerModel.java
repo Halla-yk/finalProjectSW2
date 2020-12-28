@@ -17,19 +17,20 @@ import java.util.logging.Logger;
 public class CustomerModel implements Model{
         private Statement aStatement;
     DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
-    public boolean verifyCustomer(String id, String password) {
-        boolean isFound = false;
-        try {
-            aStatement = aDbConnection.getStatement();
-            String sql = "Select * From user Where username='"
-                    + id + "' And password='" + password + "'";
-            ResultSet rs = aStatement.executeQuery(sql);
-            if (rs.next()) {
-                isFound = true;
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(DBConnectionSingleton.class.getName()).log(Level.SEVERE, null, ex);
+ 
+      private boolean authentication(String idtx,String password) throws Exception{
+        Integer id  =Integer.parseInt(idtx);
+        ResultSet rs = this.aStatement.executeQuery("Select * From customer");
+        boolean identical = false;
+        while(rs.next()){
+           if( id == rs.getInt("id") && (password == rs.getString("password")) ){
+               identical = true;
+           
+           }else{
+               identical = false;
+              
+           }
         }
-        return isFound;
-    }
+        return identical;
+      }
 }

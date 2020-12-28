@@ -24,9 +24,9 @@ public class DBConnectionSingleton {
         return aDbConnection;
     }
     public Statement getStatement() throws Exception{
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         aConnection = DriverManager.
-                getConnection("jdbc:mysql://localhost:3306/clinicsystem","","");
+                getConnection("jdbc:mysql://127.0.0.1:3306/swe2?serverTimezone=UTC","root","");
         aStatement = aConnection.createStatement();
         
         return aStatement;

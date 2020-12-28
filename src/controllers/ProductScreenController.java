@@ -7,7 +7,12 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -16,6 +21,23 @@ import javafx.fxml.Initializable;
  */
 public class ProductScreenController implements Initializable {
 
+    @FXML
+    private TableView<?> tableView;
+    @FXML
+    private TableColumn<?, ?> tcProductId;
+    @FXML
+    private TableColumn<?, ?> tcCategory;
+    @FXML
+    private TableColumn<?, ?> tcSalary;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Button showButton;
+    @FXML
+    private Button addToCart;
+    @FXML
+    private Button next;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +45,21 @@ public class ProductScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void backButtonHandle(ActionEvent event) {
+    }
+
+    @FXML
+    private void showButtonHandle(ActionEvent event) {
+    }
+
+    @FXML
+    private void sortByDateHandle(ActionEvent event) {
+    }
+
+    @FXML
+    private void addButtonHandle(ActionEvent event) {
+    }
     
 }
