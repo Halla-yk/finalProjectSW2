@@ -6,6 +6,7 @@
 package controllers;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,13 +15,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import models.ProductModel;
 
 /**
  * FXML Controller class
  *
  * @author hala
  */
-public class ProductManagerScreenController implements Initializable {
+
+public class ProductManagerScreenController extends Controller implements Initializable {
 
     @FXML
     private TextField idTx;
@@ -29,13 +33,13 @@ public class ProductManagerScreenController implements Initializable {
     @FXML
     private TextField salaryTx;
     @FXML
-    private TableView<?> tableView;
+    private TableView<ProductModel> tableView;
     @FXML
-    private TableColumn<?, ?> tcId;
+    private TableColumn<ProductModel, Integer> tcId;
     @FXML
-    private TableColumn<?, ?> tcCategory;
+    private TableColumn<ProductModel, String> tcCategory;
     @FXML
-    private TableColumn<?, ?> tcSalary;
+    private TableColumn<ProductModel, Integer> tcSalary;
     @FXML
     private Button addButton;
     @FXML
@@ -44,25 +48,39 @@ public class ProductManagerScreenController implements Initializable {
     private Button deleteButton;
     @FXML
     private Button nextPageButton;
-
+ProductModel pm;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+           tcId.setCellValueFactory(new PropertyValueFactory("id"));
+        tcCategory.setCellValueFactory(new PropertyValueFactory("category"));
+        tcSalary.setCellValueFactory(new PropertyValueFactory("salary"));
+         pm  =  (ProductModel) super.ff.getModel("product");
+        
     }    
 
     @FXML
-    private void addHandle(ActionEvent event) {
+    private void addHandle(ActionEvent event) throws SQLException {
+        int id = Integer.parseInt(idTx.getText());
+        String category = categoryTx.getText();
+        int salary = Integer.parseInt(salaryTx.getText());
+        pm.addProduct(id,category,salary);
     }
 
     @FXML
-    private void updateHandle(ActionEvent event) {
+    private void updateHandle(ActionEvent event) throws SQLException {
+         int id = Integer.parseInt(idTx.getText());
+        String category = categoryTx.getText();
+        int salary = Integer.parseInt(salaryTx.getText());
+        pm.updateProduct(id,category,salary);
     }
 
     @FXML
-    private void deleteHandle(ActionEvent event) {
+    private void deleteHandle(ActionEvent event) throws SQLException {
+        int id = Integer.parseInt(idTx.getText());
+         pm.deleteProduct(id);
     }
 
     @FXML

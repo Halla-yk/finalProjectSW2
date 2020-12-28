@@ -39,7 +39,7 @@ public class CustomerModel implements Model{
         this.password = password;
     }
  
-      private boolean authentication(String idtx,String password) throws Exception{
+      public boolean authentication(String idtx,String password) throws Exception{
         Integer id  =Integer.parseInt(idtx);
         ResultSet rs = this.aStatement.executeQuery("Select * From customer");
         boolean identical = false;

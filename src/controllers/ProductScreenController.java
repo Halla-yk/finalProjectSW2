@@ -13,22 +13,23 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import models.ProductModel;
 
 /**
  * FXML Controller class
  *
  * @author hala
  */
-public class ProductScreenController implements Initializable {
+public class ProductScreenController extends Controller implements Initializable {
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<ProductModel> tableView;
     @FXML
-    private TableColumn<?, ?> tcProductId;
+    private TableColumn<ProductModel, Integer> tcProductId;
     @FXML
-    private TableColumn<?, ?> tcCategory;
+    private TableColumn<ProductModel, String> tcCategory;
     @FXML
-    private TableColumn<?, ?> tcSalary;
+    private TableColumn<ProductModel, Integer> tcSalary;
     @FXML
     private Button backButton;
     @FXML
