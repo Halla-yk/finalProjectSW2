@@ -52,7 +52,8 @@ public class LoginController extends Controller implements Initializable {
     }
 
     @FXML
-    private void customerloginHandle(ActionEvent event) {
+    private void customerloginHandle(ActionEvent event) throws Exception {
+        sm.authentication(this.idTxt.getText(),this.passordTx.getText());
     }
     
 }
