@@ -15,8 +15,31 @@ import java.util.logging.Logger;
  * @author hala
  */
 public class StoreManagerModel implements Model{
+    
+      private int id;
+      private String password;
       private Statement aStatement;
-    DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
+      DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
+
+    public StoreManagerModel() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+      
     public boolean authentication(String idtx,String password) throws Exception{
         Integer id  =Integer.parseInt(idtx);
         ResultSet rs = this.aStatement.executeQuery("Select * From admin");
