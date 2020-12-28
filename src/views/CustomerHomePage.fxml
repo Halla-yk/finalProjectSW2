@@ -13,10 +13,13 @@
    <children>
       <VBox layoutX="193.0" layoutY="48.0" prefHeight="291.0" prefWidth="284.0">
          <children>
-            <Label prefHeight="36.0" prefWidth="247.0" text="Customer Page">
+            <Label prefHeight="36.0" prefWidth="180.0" text="Customer Page">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
             </Label>
             <Button fx:id="GoShoppingScreen" contentDisplay="CENTER" mnemonicParsing="false" onAction="#GoShoppingScreenHandle" prefHeight="47.0" prefWidth="190.0" text="Go to Shopping Screen" textAlignment="CENTER">
                <VBox.margin>
@@ -28,7 +31,7 @@
                   <Insets top="15.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="GoCartPage" mnemonicParsing="false" onAction="#GoCartPageHandle" prefHeight="45.0" prefWidth="196.0" text="Go to Cart Page">
+            <Button fx:id="GoCartPage" mnemonicParsing="false" onAction="#GoCartPageHandle" prefHeight="45.0" prefWidth="190.0" text="Go to Cart Page">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>

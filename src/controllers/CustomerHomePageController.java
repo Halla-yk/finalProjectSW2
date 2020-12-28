@@ -7,7 +7,10 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -16,6 +19,13 @@ import javafx.fxml.Initializable;
  */
 public class CustomerHomePageController extends Controller implements Initializable {
 
+    @FXML
+    private Button GoShoppingScreen;
+    @FXML
+    private Button GoProductPage;
+    @FXML
+    private Button GoCartPage;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +33,20 @@ public class CustomerHomePageController extends Controller implements Initializa
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void GoShoppingScreenHandle(ActionEvent event) throws Exception{
+        super.displayScreen(event,"ShoppingScreen.fxml");
+    }
+
+    @FXML
+    private void GoProductPageHandle(ActionEvent event) throws Exception {
+          super.displayScreen(event,"ProductScreen.fxml");
+    }
+
+    @FXML
+    private void GoCartPageHandle(ActionEvent event) throws Exception {
+          super.displayScreen(event,"CartScreen.fxml");
+    }
     
 }

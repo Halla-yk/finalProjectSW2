@@ -13,10 +13,42 @@ import java.sql.Statement;
  * @author hala
  */
 public class ProductModel implements Model{
-    /*   private int id;
+    private int id;
     private String category;
-    private int salary;
-    */
+    private int price;
+    private int quantity;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
      private Statement aStatement;
     DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
 

@@ -20,7 +20,7 @@ public class FinalProjectSWE extends Application {
     
     @Override
     public void start(Stage primaryStage)  throws Exception {
-      Parent root =  FXMLLoader.load(getClass().getResource("ProductScreen.fxml"));
+      Parent root =  FXMLLoader.load(getClass().getResource("Login.fxml"));
        scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();

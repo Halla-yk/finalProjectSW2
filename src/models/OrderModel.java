@@ -17,15 +17,16 @@ public class OrderModel implements Model{
     private String dateOfOrder;
     private String dateOfArrive;
     private int customerId;
-      private Statement aStatement;
+    private int totalPrice;
+    private Statement aStatement;
     DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
     public OrderModel() {
         
     }
     
-    public void makeOrder(int id,String shippingDate,String dateOfOrder,int customerId)throws Exception {
+    public void makeOrder(int id,String shippingDate,String dateOfOrder,int customerId,int totalPrice)throws Exception {
         String sql = "Insert Into customerorder values(" + id + ",'" +shippingDate + "','" 
-                +dateOfOrder+  ",'" +dateOfArrive + "',"+customerId+" )";
+                +dateOfOrder+  ",'" +dateOfArrive + "',"+customerId+","+totalPrice+" )";
         this.aStatement.executeUpdate(sql);
     
     }

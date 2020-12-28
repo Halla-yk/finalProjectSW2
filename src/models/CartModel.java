@@ -15,31 +15,59 @@ import java.util.ArrayList;
  */
 public class CartModel implements Model{
     private int totalPrice;
-    ArrayList<CartItemModel> c = new ArrayList<CartItemModel>();
+    ArrayList<ProductModel> p = new ArrayList<ProductModel>();
        private Statement aStatement;
     DBConnectionSingleton aDbConnection = DBConnectionSingleton.getDbConnection();
  
     
-    public double getTotalSalary(){
-        double totalPrice = 0;
-        for(CartItemModel cc :c){
-           
+    public int getTotalPrice(){
+        int totalPrice = 0;
+        for(ProductModel pp :p){
+           totalPrice+= pp.getPrice();
         }
         return totalPrice;
     }
     
-    public ArrayList<CartItemModel> getCartItems() throws Exception{
-      ResultSet rs = this.aStatement.executeQuery("Select * From cartItem");
+    public ArrayList<ProductModel> getCartItems() throws Exception{
+      ResultSet rs = this.aStatement.executeQuery("Select * From product");
         int counter = 0;
         while(rs.next()){
-            CartItemModel bb = new CartItemModel();
-            bb.(rs.getInt("bookId"));
-            bb.setBorrowdate(rs.getString("borrowDate"));
-            this.c.add(bb);
-            tableView.getItems().add(bb);
-            counter++;
-            logFile(counter+"",bb);
-        }
+            ProductModel pp = new ProductModel();
+            pp.setCategory(rs.getString("category"));
+            pp.setId(rs.getInt("id"));
+            pp.setQuantity(rs.getInt("quantity"));
+            pp.setPrice(rs.getInt("salary"));
+            this.p.add(pp);
+        
     }
+        return p;
      
+}
+    public void addToCart(String productId) throws Exception{
+     ResultSet rs = this.aStatement.executeQuery("Select * From product where id = "+productId);
+        int counter = 0;
+        while(rs.next()){
+            ProductModel pp = new ProductModel();
+            pp.setCategory(rs.getString("category"));
+            pp.setId(rs.getInt("id"));
+            pp.setQuantity(rs.getInt("quantity"));
+            pp.setPrice(rs.getInt("salary"));
+            this.p.add(pp);
+        
+    }
+    }
+    public void deleteFromCart(String productId) throws Exception{
+         ResultSet rs = this.aStatement.executeQuery("Select * From product where id = "+productId);
+        int counter = 0;
+        while(rs.next()){
+            ProductModel pp = new ProductModel();
+            pp.setCategory(rs.getString("category"));
+            pp.setId(rs.getInt("id"));
+            pp.setQuantity(rs.getInt("quantity"));
+            pp.setPrice(rs.getInt("salary"));
+            this.p.remove(pp);
+        
+    }
+    }
+
 }
